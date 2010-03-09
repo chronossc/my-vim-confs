@@ -6,10 +6,6 @@
 " matchit.vim (extended "%" matching) contributed by Michael Brown.
 " Borrowed from html.vim Thanks to Johannes Zellner and Benji Fisher.
 if exists("loaded_matchit")
-	if exists("loaded_django_matchit") || &cp
-		finish
-	endif
-	let loaded_django_matchit = 1
     let b:match_ignorecase = 1
     let b:match_skip = 's:Comment'
     let b:match_words = '<:>,' .

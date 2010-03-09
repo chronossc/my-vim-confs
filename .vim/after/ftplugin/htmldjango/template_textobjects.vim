@@ -1,4 +1,4 @@
-" textobj-django_template - Text objects for django templates
+" textobj-htmldjango - Text objects for django templates
 " Version: 0.1.0
 " License: MIT license  {{{
 "     Permission is hereby granted, free of charge, to any person obtaining
@@ -30,7 +30,7 @@
 "
 "
 " Overview:
-"     This plugin adds some textobjects to the html.django_template filetype
+"     This plugin adds some textobjects to the html.htmldjango filetype
 "
 "     idb/adb - in/around a django {% block %}
 "     idf/adf - in around a django {% for %} loop
@@ -43,9 +43,9 @@
 " Installation:
 "
 "   Please ensure you have the above plugins installed as instructed
-"   This file should be in your after/ftplugin for django_template
+"   This file should be in your after/ftplugin for htmldjango
 "
-"   ~/.vim/after/ftplugin/django_template/template_textobjects.vim
+"   ~/.vim/after/ftplugin/htmldjango/template_textobjects.vim
 "
 " }}
 
@@ -70,7 +70,7 @@ else
     finish
 endif
 
-if !exists('*g:textobj_function_django_template')
+if !exists('*g:textobj_function_htmldjango')
 
     fun s:select_a(type)
         let initpos = getpos(".")
@@ -100,7 +100,7 @@ if !exists('*g:textobj_function_django_template')
         return ['v',b,e]
     endfun
 
-    fun! g:textobj_function_django_template(block_type,object_type)
+    fun! g:textobj_function_htmldjango(block_type,object_type)
         return s:select_{a:block_type}_{a:object_type}()
     endfun
 
