@@ -1,12 +1,48 @@
+
+
+" windows stuff
+source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+behave mswin
+set rtp='$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after,$VIM/my-vim-confs/.vim"
+
+set diffexpr=MyDiff()
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let eq = ''
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      let cmd = '""' . $VIMRUNTIME . '\diff"'
+      let eq = '"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
+endfunction
+
+
+
 " Basics {
 set nocompatible " get out of horrible vi-compatible mode
 set background=dark " we are using a dark background
 syntax on " syntax highlighting on
 filetype plugin indent on " load filetype plugins and indent settings
 
+
 if has("gui_running")
 	colorscheme wombat
-	set guifont=Consolas\ 12
+	set guifont=Consolas:h11
 
 endif
 " }
@@ -49,7 +85,7 @@ set noerrorbells " don't make noise
 
 
 "
-set list listchars=tab:\ \ ,trail:Â·,eol:Â¬ " mark trailing white space
+set list listchars=tab:\ \ ,trail:·,eol:¬ " mark trailing white space
 " }
 
 " Visual Cues {
