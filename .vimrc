@@ -4,7 +4,7 @@
 source $VIMRUNTIME/vimrc_example.vim
 "source $VIMRUNTIME/mswin.vim
 behave mswin
-set rtp='$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after,$VIM/my-vim-confs/.vim"
+set rtp='$HOME/vimfiles,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/vimfiles/after,$VIM/my-vim-confs/.vim,$HOME/my-vim-confs/.vim"
 
 set diffexpr=MyDiff()
 function MyDiff()
