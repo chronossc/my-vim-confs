@@ -236,6 +236,10 @@ if !exists("myautocmds")
 	" JSON Extension
 	au BufNewFile,BufRead *.json set filetype=json foldmethod=syntax
 
+	" Django
+	autocmd FileType python set ft=python.django " For SnipMate
+	autocmd FileType html set ft=htmldjango.html " For SnipMate
+
 	" Omni completion
 	"autocmd FileType python set omnifunc=pythoncomplete#Complete
 	autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
