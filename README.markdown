@@ -28,6 +28,7 @@ In addition to customizations in the file ``.vimrc``
 $ git clone git://github.com/chronossc/my-vim-confs.git
 $ ln -s my-vim-confs/.vim
 $ ln -s my-vim-confs/.vimrc
+$ ln -s my-vim-confs/.fonts.conf
 ```
 
 Now you can use :)
