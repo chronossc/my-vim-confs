@@ -1,6 +1,4 @@
-=================
-Vim Files
-=================
+# Vim Files
 
 In this store I put my settings I use in my applications I have come to develop in Django and web2py.
 
@@ -23,11 +21,13 @@ In this store I put my settings I use in my applications I have come to develop 
 In addition to customizations in the file ``.vimrc``
 
 =================
-Installation
-=================
 
+# Installation
+
+```bash
 $ git clone git://github.com/chronossc/my-vim-confs.git
 $ ln -s my-vim-confs/.vim
 $ ln -s my-vim-confs/.vimrc
+```
 
 Now you can use :)
