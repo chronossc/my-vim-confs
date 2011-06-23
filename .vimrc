@@ -1,12 +1,15 @@
 " Basics {
 set nocompatible " get out of horrible vi-compatible mode
 set background=dark " we are using a dark background
+" set background=light " we are using a light background
 syntax on " syntax highlighting on
 filetype plugin indent on " load filetype plugins and indent settings
 
 if has("gui_running")
-	colorscheme wombat
-	set guifont=Consolas\ 12
+	" colorscheme wombat-original
+	" colorscheme solarized
+	colorscheme underwater-mod
+	set guifont=Monaco\ 10
 
 endif
 " }
@@ -30,6 +33,8 @@ set sessionoptions+=winpos " What should be saved during sessions being saved
 " Vim UI {
 set popt+=syntax:y " Syntax when printing
 set showcmd " show the command being typed
+set guioptions-=T "disable toolbar
+set lines=38 columns=150 "Size
 set linespace=0 " space it out a little more (easier to read)
 set wildmenu " turn on wild menu
 set wildmode=list:longest " turn on wild menu in special format (long format)
@@ -49,7 +54,8 @@ set noerrorbells " don't make noise
 
 
 "
-set list listchars=tab:\ \ ,trail:·,eol:¬ " mark trailing white space
+" set list listchars=tab:\ \ ,trail:·,eol:¬ " mark trailing white space
+set list listchars=tab:\ \ ,trail:· " mark trailing white space
 " }
 
 " Visual Cues {
@@ -115,10 +121,23 @@ noremap <F8> gg=G
 inoremap <F8> <ESC>mzgg=G`z<Insert>
 
 " Tab navigation
+
 noremap <C-Right> :tabn<CR>
 inoremap <C-Right> <esc>:tabn<CR><Insert>
 noremap <C-Left> :tabprev<CR>
 inoremap <C-Left> <ESC>tabprev<CR><Insert>
+" }
+
+" Shortcut Save (default in others editors) {
+noremap <C-S> :w<CR>
+" }
+
+" Shortcuts NERDTree {
+noremap <C-B> :NERDTreeToggle<CR>
+" }
+
+" Shortcuts Fuzzy Finder {
+noremap <C-P> :FufFile<CR>
 " }
 
 function LoadDjangoGoodies()
@@ -213,6 +232,9 @@ if !exists("myautocmds")
 	"call LoadPythonGoodies()
 	"autocmd Filetype python,html,xhtml call LoadPythonGoodies()
 	au BufNewFile,BufRead *.py,*.html call LoadPythonGoodies()
+
+	" JSON Extension
+	au BufNewFile,BufRead *.json set filetype=json foldmethod=syntax
 
 	" Omni completion
 	"autocmd FileType python set omnifunc=pythoncomplete#Complete
