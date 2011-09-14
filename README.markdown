@@ -25,9 +25,10 @@ E também mais algumas customizações no ``.vimrc``
 ## Instalação
 
 ```bash
-$ git clone git@github.com:gilsondev/my-vim-confs.git .vim
-$ ln -s .vim/.vimrc
-$ ln -s .vim/.fonts.conf
+$ git clone git@github.com:gilsondev/my-vim-confs.git
+$ ln -s my-vim-confs/.vim
+$ ln -s my-vim-confs/.vimrc
+$ ln -s my-vim-confs/.fonts.conf
 ```
 
 E fica pronto para usar.
