@@ -1,8 +1,0 @@
-To use that, just do a clone and make symlinks, ex:
-
-
-$ git clone git://github.com/chronossc/my-vim-confs.git
-$ ln -s my-vim-confs/.vim
-$ ln -s my-vim-confs/.vimrc
-
-Now you can use :)
